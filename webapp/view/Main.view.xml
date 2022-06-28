@@ -1,0 +1,66 @@
+<mvc:View controllerName="mcc.project2.controller.Main"
+    xmlns:t="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+			<t:Table 
+                id="TABLE1"
+				rows="{/Customers}"
+				selectionMode="MultiToggle"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<t:extension>
+					<OverflowToolbar id="OFLOW1" style="Clear">
+						<Title id="TT" text="Address Visibility"/>
+                        <Button id="BT1" icon="sap-icon://show"
+                                tooltip="Show Address" 
+                                press="onShowAddress"/>
+                        <Button id="BT2" icon="sap-icon://hide"
+                                tooltip="Hide Address" 
+                                press="onHideAddress"/>
+					</OverflowToolbar>
+				</t:extension>
+				<t:columns>
+					<t:Column id="COL1" width="11rem">
+						<Label id="LBL1" text="Customer ID" />
+						<t:template>
+							<Text id="TXT1" text="{CustomerID}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column id="COL2" width="11rem">
+						<Label id="LBL2" text="Company Name" />
+						<t:template>
+							<Text id="TXT2" text="{CompanyName}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column id="COL3" width="11rem">
+						<Label id="LBL3" text="Country" />
+						<t:template>
+							<Text id="TXT3" text="{Country}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column id="COL4" width="11rem">
+						<Label id="LBL4" text="City" />
+						<t:template>
+							<Text id="TXT4" text="{City}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column id="COL5" width="11rem">
+						<Label id="LBL5" text="Address" />
+						<t:template>
+							<Text id="TXT5" text="{Address}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column id="COL6" width="11rem">
+						<Label id="LBL6" text="Phone" />
+						<t:template>
+							<Text id="TXT6" text="{Phone}" wrapping="false" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+        </content>
+    </Page>
+</mvc:View>
